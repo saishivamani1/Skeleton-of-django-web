@@ -1,0 +1,31 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet">
+</head>
+<body> -->
+    {% extends 'myapp/base.html' %}
+
+    {% block title %}
+    <title>Create Post</title>
+    {% endblock title %}
+
+    {% block content %}
+    
+    <h1>Create Post</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Create</button>
+
+        {% if error %}
+            <p style="color: red;">{{ error }}</p>
+        {% endif %}
+    </form>
+
+    {% endblock %}
+<!-- </body>
+</html> -->
